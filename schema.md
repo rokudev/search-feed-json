@@ -1235,6 +1235,7 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
 				"sd",
 				"hd",
 				"hd+",
+				"fhd",
 				"uhd"
 			]
 		},
