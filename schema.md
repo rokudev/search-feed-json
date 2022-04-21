@@ -15,11 +15,9 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
     },
     "defaultAvailabilityCountries": {
       "type": "array",
-      "items": [
-        {
+      "items": {
           "$ref": "#/definitions/country_type"
-        }
-      ]
+      }
     },
     "assets": {
       "type": "array",
@@ -384,7 +382,9 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
                 },
                 "languages": {
                   "type": "array",
-                  "$ref": "#/definitions/language_type"
+                  "items": {
+                    "$ref": "#/definitions/language_type"
+                  }
                 }
               },
               "required": [
@@ -1452,7 +1452,9 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
         },
         "audioFormats": {
           "type": "array",
-          "$ref": "#/definitions/audio_format_type"
+          "items": {
+            "$ref": "#/definitions/audio_format_type"
+          }
         },
         "currency": {
           "type": "string"
