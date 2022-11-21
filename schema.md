@@ -21,6 +21,10 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
         }
       ]
     },
+    "nextPageUrl": {
+      "type": "string",
+      "pattern": "^http(s)?://.+$"
+    },
     "assets": {
       "type": "array",
       "items": {
@@ -32,89 +36,32 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
           "type": {
             "$ref": "#/definitions/asset_type"
           },
-          "sportsType": {
-            "$ref": "#/definitions/sport_type"
-          },
-          "sportsEntityType": {
-            "$ref": "#/definitions/sport_entity_type"
-          },
-          "sportsSeriesType": {
-            "$ref": "#/definitions/sport_series_type"
-          },
-          "parentSportsEntityId": {
-            "type": "string"
-          },
           "titles": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "value": {
-                  "type": "string",
-                  "maxLength": 200
-                },
-                "language": {
-                  "$ref": "#/definitions/language_type"
-                }
-              },
-              "required": [
-                "value"
-              ]
+              "$ref": "#/definitions/title"
             }
           },
           "shortDescriptions": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "value": {
-                  "type": "string",
-                  "maxLength": 200
-                },
-                "language": {
-                  "$ref": "#/definitions/language_type"
-                }
-              },
-              "required": [
-                "value"
-              ]
+              "$ref": "#/definitions/short_description"
             }
           },
           "longDescriptions": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "value": {
-                  "type": "string",
-                  "maxLength": 500
-                },
-                "language": {
-                  "$ref": "#/definitions/language_type"
-                }
-              },
-              "required": [
-                "value"
-              ]
+              "$ref": "#/definitions/long_description"
             }
           },
           "externalIdSource": {
             "$ref": "#/definitions/external_id_source_type"
           },
           "externalIds": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "source": {
-                "$ref": "#/definitions/external_id_source_type"
-              }
-            },
-            "required": [
-              "id",
-              "source"
-            ]
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/external_id"
+            }
           },
           "releaseDate": {
             "description": "ISO-8601",
@@ -162,235 +109,13 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
           "advisoryRatings": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "source": {
-                  "$ref": "#/definitions/advisory_ratings_source_type"
-                },
-                "value": {
-                  "type": "string"
-                },
-                "descriptors": {
-                  "type": "array"
-                }
-              },
-              "allOf": [
-                {
-                  "if": {
-                    "properties": {
-                      "source": {
-                        "const": "ACB"
-                      }
-                    }
-                  },
-                  "then": {
-                    "properties": {
-                      "value": {
-                        "$ref": "#/definitions/ACB_values"
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "source": {
-                        "const": "BBFC"
-                      }
-                    }
-                  },
-                  "then": {
-                    "properties": {
-                      "value": {
-                        "$ref": "#/definitions/BBFC_values"
-                      },
-                      "descriptors": {
-                        "items": {
-                          "$ref": "#/definitions/BBFC_descriptors"
-                        }
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "source": {
-                        "const": "CLASSIND"
-                      }
-                    }
-                  },
-                  "then": {
-                    "properties": {
-                      "value": {
-                        "$ref": "#/definitions/CLASSIND_values"
-                      },
-                      "descriptors": {
-                        "items": {
-                          "$ref": "#/definitions/CLASSIND_descriptors"
-                        }
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "source": {
-                        "const": "CHVRS"
-                      }
-                    }
-                  },
-                  "then": {
-                    "properties": {
-                      "value": {
-                        "$ref": "#/definitions/CHVRS_values"
-                      },
-                      "descriptors": {
-                        "items": {
-                          "$ref": "#/definitions/CHVRS_descriptors"
-                        }
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "source": {
-                        "const": "CPR"
-                      }
-                    }
-                  },
-                  "then": {
-                    "properties": {
-                      "value": {
-                        "$ref": "#/definitions/CPR_values"
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "source": {
-                        "const": "FSF"
-                      }
-                    }
-                  },
-                  "then": {
-                    "properties": {
-                      "value": {
-                        "$ref": "#/definitions/FSF_values"
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "source": {
-                        "const": "FSK"
-                      }
-                    }
-                  },
-                  "then": {
-                    "properties": {
-                      "value": {
-                        "$ref": "#/definitions/FSK_values"
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "source": {
-                        "const": "MPAA"
-                      }
-                    }
-                  },
-                  "then": {
-                    "properties": {
-                      "value": {
-                        "$ref": "#/definitions/MPAA_values"
-                      },
-                      "descriptors": {
-                        "items": {
-                          "$ref": "#/definitions/MPAA_descriptors"
-                        }
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "source": {
-                        "const": "RTC"
-                      }
-                    }
-                  },
-                  "then": {
-                    "properties": {
-                      "value": {
-                        "$ref": "#/definitions/RTC_values"
-                      },
-                      "descriptors": {
-                        "items": {
-                          "$ref": "#/definitions/RTC_descriptors"
-                        }
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "source": {
-                        "const": "USA_PR"
-                      }
-                    }
-                  },
-                  "then": {
-                    "properties": {
-                      "value": {
-                        "$ref": "#/definitions/USA_PR_values"
-                      },
-                      "descriptors": {
-                        "$ref": "#/definitions/USA_PR_descriptors"
-                      }
-                    }
-                  }
-                }
-              ],
-              "required": [
-                "source",
-                "value"
-              ]
+              "$ref": "#/definitions/advisory_rating"
             }
           },
           "images": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "$ref": "#/definitions/image_type"
-                },
-                "url": {
-                  "type": "string",
-                  "pattern": "^http(s)?://.+$"
-                },
-                "languages": {
-                  "type": "array",
-                  "$ref": "#/definitions/language_type"
-                }
-              },
-              "required": [
-                "type",
-                "url"
-              ]
+              "$ref": "#/definitions/image"
             }
           },
           "durationInMilliseconds": {
@@ -432,44 +157,17 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
               "seriesId"
             ]
           },
-          "sportsInfo": {
-            "type": "object",
-            "properties": {
-              "startTimeStamp": {
-                "type": "number"
-              },
-              "sportsSeriesId": {
-                "type": "string"
-              },
-              "sportsParticipants": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "participantId": {
-                      "type": "string"
-                    },
-                    "isHome": {
-                      "type": "boolean"
-                    }
-                  },
-                  "required": [
-                    "participantId"
-                  ]
-                }
-              }
-            },
-            "required": [
-              "startTimeStamp",
-              "sportsSeriesId",
-              "sportsParticipants"
-            ]
-          },
           "content": {
             "type": "object",
             "properties": {
               "media": {
                 "$ref": "#/definitions/media"
+              },
+              "linearEvents": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/linear_event"
+                }
               },
               "playOptions": {
                 "type": "array",
@@ -490,6 +188,9 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
                 ]
               }
             ]
+          },
+          "isOriginal": {
+            "type": "boolean"
           }
         },
         "if": {
@@ -510,11 +211,29 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
           ]
         },
         "else": {
-          "required": [
-            "id",
-            "titles",
-            "type"
-          ]
+          "if": {
+            "properties": {
+              "type": {
+                "const": "season"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "type",
+              "seasonInfo"
+            ]
+          },
+          "else": {
+            "required": [
+              "id",
+              "titles",
+              "type"
+            ]
+          }
         }
       }
     }
@@ -524,51 +243,340 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
     "assets"
   ],
   "definitions": {
+    "image": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/image_type"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^http(s)?://.+$"
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/language_type"
+          }
+        }
+      },
+      "required": [
+        "type",
+        "url"
+      ]
+    },
+    "short_description": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "language": {
+          "$ref": "#/definitions/language_type"
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/language_type"
+          }
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "long_description": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "language": {
+          "$ref": "#/definitions/language_type"
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/language_type"
+          }
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "title": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "language": {
+          "$ref": "#/definitions/language_type"
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/language_type"
+          }
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "advisory_rating": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "$ref": "#/definitions/advisory_ratings_source_type"
+        },
+        "value": {
+          "type": "string"
+        },
+        "descriptors": {
+          "type": "array"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "source": {
+                "const": "ACB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "$ref": "#/definitions/ACB_values"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source": {
+                "const": "BBFC"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "$ref": "#/definitions/BBFC_values"
+              },
+              "descriptors": {
+                "items": {
+                  "$ref": "#/definitions/BBFC_descriptors"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source": {
+                "const": "CLASSIND"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "$ref": "#/definitions/CLASSIND_values"
+              },
+              "descriptors": {
+                "items": {
+                  "$ref": "#/definitions/CLASSIND_descriptors"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source": {
+                "const": "CHVRS"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "$ref": "#/definitions/CHVRS_values"
+              },
+              "descriptors": {
+                "items": {
+                  "$ref": "#/definitions/CHVRS_descriptors"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source": {
+                "const": "CPR"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "$ref": "#/definitions/CPR_values"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source": {
+                "const": "FSF"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "$ref": "#/definitions/FSF_values"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source": {
+                "const": "FSK"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "$ref": "#/definitions/FSK_values"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source": {
+                "const": "MPAA"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "$ref": "#/definitions/MPAA_values"
+              },
+              "descriptors": {
+                "items": {
+                  "$ref": "#/definitions/MPAA_descriptors"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source": {
+                "const": "RTC"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "$ref": "#/definitions/RTC_values"
+              },
+              "descriptors": {
+                "items": {
+                  "$ref": "#/definitions/RTC_descriptors"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source": {
+                "const": "USA_PR"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "$ref": "#/definitions/USA_PR_values"
+              },
+              "descriptors": {
+                "$ref": "#/definitions/USA_PR_descriptors"
+              }
+            }
+          }
+        }
+      ],
+      "required": [
+        "source",
+        "value"
+      ]
+    },
     "asset_type": {
       "type": "string",
       "enum": [
         "movie",
+        "tvSpecial",
         "series",
         "season",
         "episode",
+        "liveStream",
         "shortForm",
         "externalIdOnly"
-      ]
-    },
-    "sport_type": {
-      "type": "string",
-      "enum": [
-        "soccer",
-        "american football",
-        "tennis",
-        "golf"
-      ]
-    },
-    "sport_entity_type": {
-      "type": "string",
-      "enum": [
-        "league",
-        "conference",
-        "division",
-        "team",
-        "individual"
-      ]
-    },
-    "sport_series_type": {
-      "type": "string",
-      "enum": [
-        "season",
-        "tournament",
-        "playoffs"
       ]
     },
     "external_id_source_type": {
       "type": "string",
       "enum": [
         "tms",
+        "ref",
+        "gsd",
         "partner_title_id",
         "partner_asset_id",
         "gracenote_station_id"
+      ]
+    },
+    "externalIdRelationTypes": {
+      "type": "string",
+      "enum": [
+        "parent",
+        "child",
+        "sibling"
+      ]
+    },
+    "image_type": {
+      "type": "string",
+      "enum": [
+        "main",
+        "background",
+        "keyart",
+        "logo",
+        "dark_logo",
+        "hud_logo"
       ]
     },
     "genre_type": {
@@ -862,6 +870,7 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
         "dz",
         "el",
         "en",
+        "en-at",
         "en-au",
         "en-bz",
         "en-ca",
@@ -880,6 +889,7 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
         "es-cr",
         "es-do",
         "es-ec",
+        "es-es",
         "es-sv",
         "es-gt",
         "es-hn",
@@ -1000,8 +1010,6 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
         "yi",
         "yo",
         "zh",
-        "zh-hans",
-        "zh-hant",
         "zh-hk",
         "zh-cn",
         "zh-sg",
@@ -1013,34 +1021,28 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
       "type": "string",
       "enum": [
         "ar",
+        "at",
+        "au",
         "bo",
+        "br",
+        "ca",
         "cl",
         "co",
+        "cr",
+        "de",
         "ec",
-        "sv",
+        "es",
+        "fr",
+        "gb",
         "gt",
         "hn",
+        "ie",
+        "mx",
         "ni",
         "pa",
         "pe",
-        "br",
-        "ca",
-        "de",
-        "gb",
-        "ie",
-        "mx",
+        "sv",
         "us"
-      ]
-    },
-    "image_type": {
-      "type": "string",
-      "enum": [
-        "main",
-        "background",
-        "keyart",
-        "logo",
-        "dark_logo",
-        "hud_logo"
       ]
     },
     "ACB_values": {
@@ -1452,14 +1454,15 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
         },
         "audioFormats": {
           "type": "array",
-          "$ref": "#/definitions/audio_format_type"
+          "items": {
+            "$ref": "#/definitions/audio_format_type"
+          }
         },
         "currency": {
           "type": "string"
         },
         "playId": {
-          "type": "string",
-          "minLength": 2
+          "type": "string"
         },
         "availabilityStartTimeStamp": {
           "description": "millis since epoch",
@@ -1476,6 +1479,12 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
         "availabilityEndTime": {
           "description": "ISO-8601",
           "type": "string"
+        },
+        "discreteLiveEvent": {
+          "$ref": "#/definitions/live_event"
+        },
+        "availabilityInfo": {
+          "$ref": "#/definitions/availability_info"
         }
       },
       "allOf": [
@@ -1561,6 +1570,114 @@ Developers can use the Roku Search feed 2.0 JSON schema to validate the format o
         "dolby atmos",
         "dolby digital plus"
       ]
+    },
+    "linear_event": {
+      "type": "object",
+      "properties": {
+        "stationId": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": "string"
+        },
+        "durationInSeconds": {
+          "type": "integer"
+        },
+        "isLive": {
+          "type": "boolean"
+        },
+        "date": {
+          "type": "string"
+        },
+        "times": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "title": {
+          "type": "string"
+        },
+        "externalId": {
+          "$ref": "#/definitions/external_id"
+        },
+        "startTime": {
+          "type": "integer"
+        },
+        "endTime": {
+          "type": "integer"
+        }
+      }
+    },
+    "external_id": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/definitions/external_id_source_type"
+        }
+      },
+      "required": [
+        "id",
+        "source"
+      ]
+    },
+    "live_event": {
+      "type": "object",
+      "properties": {
+        "streamStart": {
+          "type": "integer"
+        },
+        "streamEnd": {
+          "type": "integer"
+        },
+        "streamViewable": {
+          "type": "integer"
+        },
+        "streamUnviewable": {
+          "type": "integer"
+        },
+        "eventStart": {
+          "type": "integer"
+        },
+        "eventEnd": {
+          "type": "integer"
+        },
+        "timeChangeReason": {
+          "type": "string"
+        }
+      }
+    },
+    "availability_info": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "license": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "platform": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     }
   }
 }
