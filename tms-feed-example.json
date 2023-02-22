@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+  "defaultLanguage": "en",
+  "defaultAvailabilityCountries": [
+    "US"
+  ],
+  "assets": [
+    {
+      "id": "MV000833410000",
+      "type": "externalIdOnly",
+      "content": {
+        "playOptions": [
+          {
+            "playId": "11213123",
+            "license": "subscription",
+            "quality": "FHD",
+            "availabilityInfo": {
+              "country": [
+                "MX"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "SH000833410000",
+      "type": "externalIdOnly"
+    },
+    {
+      "id": "EP000833410000",
+      "type": "externalIdOnly",
+      "content": {
+        "playOptions": [
+          {
+            "playId": "11213123",
+            "license": "subscription",
+            "quality": "FHD"
+          }
+        ]
+      }
+    }
+  ]
+}
