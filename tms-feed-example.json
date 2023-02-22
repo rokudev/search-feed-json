@@ -8,6 +8,7 @@
     {
       "id": "MV000833410000",
       "type": "externalIdOnly",
+      "externalIdSource": "TMS",
       "content": {
         "playOptions": [
           {
@@ -25,11 +26,13 @@
     },
     {
       "id": "SH000833410000",
-      "type": "externalIdOnly"
+      "type": "externalIdOnly",
+      "externalIdSource": "TMS"
     },
     {
       "id": "EP000833410000",
       "type": "externalIdOnly",
+      "externalIdSource": "TMS",
       "content": {
         "playOptions": [
           {
