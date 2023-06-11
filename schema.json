@@ -1303,10 +1303,10 @@
                                 "type": "string"
                             },
                             "quality": {
-                                "$ref": "#/definitions/video_type"
+                                "$ref": "#/definitions/video_quality_type"
                             },
                             "videoType": {
-                                "$ref": "#/definitions/video_quality_type"
+                                "$ref": "#/definitions/video_type"
                             },
                             "bitRate": {
                                 "description": "must be greater than or equal to 0",
