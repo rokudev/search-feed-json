@@ -1,0 +1,209 @@
+{
+  "version": "1",
+  "defaultLanguage": "en",
+  "defaultAvailabilityCountries": [
+    "us",
+    "mx"
+  ],
+  "assets": [
+    {
+      "id": "roku-demos-series",
+      "type": "series",
+      "titles": [
+        {
+          "value": "Roku Demo Videos",
+          "languages": ["en"]
+        },
+        {
+          "value": "Vídeos de demostración de Roku",
+          "languages": ["es"]
+        }
+      ],
+      "shortDescriptions": [
+        {
+          "value": "Roku regularly hosts webinars to provide the Roku development community with detailed coverage of key tools and features",
+          "languages": ["en"]
+        },
+        {
+          "value": "Roku organiza regularmente seminarios web para brindar a la comunidad de desarrollo de Roku una cobertura detallada de las herramientas y características clave.",
+          "languages": ["es"]
+        }
+      ],
+      "longDescriptions": [
+        {
+          "value": "Roku regularly hosts webinars to provide the Roku development community with detailed coverage of key Roku development tools and features. The webinars are usually led by Roku engineers or other subject matter experts, and they typically include a presentation explaining the importance of the feature, a demo showing how it works, and Q&A session for addressing questions from the Roku developer community. Webinars also include Roku's annual developer summit.",
+          "languages": ["en"]
+        },
+        {
+          "value": "Roku organiza seminarios web con regularidad para brindar a la comunidad de desarrollo de Roku una cobertura detallada de las herramientas y funciones clave de desarrollo de Roku. Los seminarios web generalmente están dirigidos por ingenieros de Roku u otros expertos en la materia, y generalmente incluyen una presentación que explica la importancia de la función, una demostración que muestra cómo funciona.",
+          "languages": ["es"]
+        }
+      ],
+      "releaseDate": "2020-01-17",
+      "genres": [
+        "educational"
+      ],
+      "advisoryRatings": [
+        {
+          "source": "USA_PR",
+          "value": "TVG"
+        },
+        {
+          "source": "RTC",
+          "value": "A"
+        }
+      ],
+      "images": [
+        {
+          "type": "main",
+          "url": "https://images.sr.roku.com/test/advanced-series.png",
+          "languages": [
+            "en",
+            "es"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "season",
+      "titles": [
+        {
+          "value": "Demos Season 1",
+          "languages": ["en"]
+        },
+        {
+          "value": "Demostración temporada 1",
+          "languages": ["es"]
+        }
+      ],
+      "shortDescriptions": [
+        {
+          "value": "Season 1 of the Roku Demo and Webinars series",
+          "languages": ["en"]
+        },
+        {
+          "value": "Temporada 1 de la serie Roku Demo and Webinars",
+          "languages": ["es"]
+        }
+      ],
+      "longDescriptions": [
+        {
+          "value": "Season 1 of the Roku Demo and Webinars series",
+          "languages": ["en"]
+        },
+        {
+          "value": "Temporada 1 de la serie Roku Demo and Webinars",
+          "languages": ["es"]
+        }
+      ],
+      "seasonInfo": {
+        "seriesId": "roku-demos-series",
+        "seasonNumber": 1
+      },
+      "releaseDate": "2020-01-17",
+      "genres": [
+        "educational"
+      ],
+      "advisoryRatings": [
+        {
+          "source": "USA_PR",
+          "value": "TVG"
+        },
+        {
+          "source": "RTC",
+          "value": "A"
+        }
+      ],
+      "images": [
+        {
+          "type": "main",
+          "url": "https://images.sr.roku.com/test/advanced-season.png",
+          "languages": [
+            "en",
+            "es"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "voice-control-demo-episode",
+      "type": "episode",
+      "titles": [
+        {
+          "value": "Voice Features",
+          "languages": ["en"]
+        },
+        {
+          "value": "Funciones de Voz",
+          "languages": ["es"]
+        }
+      ],
+      "shortDescriptions": [
+        {
+          "value": "A video highlighting Direct to Play and Enhanced Voice Control features",
+          "languages": ["en"]
+        },
+        {
+          "value": "Un video que destaca las funciones Direct to Play y Enhanced Voice Control",
+          "languages": ["es"]
+        }
+      ],
+      "longDescriptions": [
+        {
+          "value": "A video highlighting Direct to Play and Enhanced Voice Control features. This helps developers understand how this enhances the user experience",
+          "languages": ["en"]
+        },
+        {
+          "value": "Un video que destaca las funciones Direct to Play y Enhanced Voice Control. Esto ayuda a los desarrolladores a comprender cómo mejora la experiencia del usuario.",
+          "languages": ["es"]
+        }
+      ],
+      "episodeInfo": {
+        "seriesId": "roku-demos-series",
+        "episodeNumber": 1
+      },
+      "releaseDate": "2020-01-17",
+      "genres": [
+        "educational"
+      ],
+      "advisoryRatings": [
+        {
+          "source": "USA_PR",
+          "value": "TVG"
+        },
+        {
+          "source": "RTC",
+          "value": "A"
+        }
+      ],
+      "images": [
+        {
+          "type": "main",
+          "url": "https://images.sr.roku.com/test/advanced-episode.png",
+          "languages": [
+            "en",
+            "es"
+          ]
+        }
+      ],
+      "durationInSeconds": 98,
+      "content": {
+        "playOptions": [
+          {
+            "license": "free",
+            "quality": "uhd",
+            "playId": "shortform-voice-control",
+            "availabilityStartTimeStamp": 1565085600000,
+            "availabilityEndTimeStamp": 2524546800000,
+            "availabilityInfo": {
+              "country": [
+                "us",
+                "mx"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

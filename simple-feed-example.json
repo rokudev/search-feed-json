@@ -1,0 +1,86 @@
+{
+  "version": "1",
+  "defaultLanguage": "en",
+  "defaultAvailabilityCountries": [
+    "us",
+    "mx"
+  ],
+  "assets": [
+    {
+      "id": "shortform-voice-control",
+      "type": "shortForm",
+      "titles": [
+        {
+          "value": "Voice Features",
+          "language": "en"
+        },
+        {
+          "value": "Funciones de Voz",
+          "languages": ["es"]
+        }
+      ],
+      "shortDescriptions": [
+        {
+          "value": "A video highlighting Direct to Play and Enhanced Voice Control features",
+          "languages": ["en"]
+        },
+        {
+          "value": "Un video que destaca las funciones Direct to Play y Enhanced Voice Control",
+          "languages": ["es"]
+        }
+      ],
+      "longDescriptions": [
+        {
+          "value": "A video highlighting Direct to Play and Enhanced Voice Control features on Roku",
+          "languages": ["en"]
+        },
+        {
+          "value": "Un video que destaca las funciones Direct to Play y Enhanced Voice Control en Roku",
+          "languages": ["es"]
+        }
+      ],
+      "releaseDate": "2020-01-17",
+      "genres": [
+        "educational"
+      ],
+      "advisoryRatings": [
+        {
+          "source": "USA_PR",
+          "value": "TVG"
+        },
+        {
+          "source": "RTC",
+          "value": "A"
+        }
+      ],
+      "images": [
+        {
+          "type": "main",
+          "url": "https://images.sr.roku.com/test/simple-shortform.png",
+          "languages": [
+            "en",
+            "es"
+          ]
+        }
+      ],
+      "durationInSeconds": 98,
+      "content": {
+        "playOptions": [
+          {
+            "license": "free",
+            "quality": "uhd",
+            "playId": "shortform-voice-control",
+            "availabilityStartTimeStamp": 1565085600000,
+            "availabilityEndTimeStamp": 2524546800000,
+            "availabilityInfo": {
+              "country": [
+                "us",
+                "mx"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
