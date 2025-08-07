@@ -10,9 +10,9 @@
 		},
 		"defaultAvailabilityCountries": {
 			"type": "array",
-			"items": [{
+			"items": {
 				"$ref": "#/definitions/country_type"
-			}]
+			}
 		},
 		"nextPageUrl": {
 			"type": "string",
