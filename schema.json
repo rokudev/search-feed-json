@@ -10,9 +10,9 @@
 		},
 		"defaultAvailabilityCountries": {
 			"type": "array",
-			"items": [{
+			"items": {
 				"$ref": "#/definitions/country_type"
-			}]
+			}
 		},
 		"nextPageUrl": {
 			"type": "string",
@@ -1311,10 +1311,10 @@
 								"type": "string"
 							},
 							"quality": {
-								"$ref": "#/definitions/video_type"
+								"$ref": "#/definitions/video_quality_type"
 							},
 							"videoType": {
-								"$ref": "#/definitions/video_quality_type"
+								"$ref": "#/definitions/video_type"
 							},
 							"bitRate": {
 								"description": "must be greater than or equal to 0",
@@ -1644,7 +1644,7 @@
 				"country": {
 					"type": "array",
 					"items": {
-						"type": "string"
+						"$ref": "#/definitions/country_type"
 					}
 				},
 				"license": {
