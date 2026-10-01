@@ -529,7 +529,8 @@
 				"season",
 				"episode",
 				"shortForm",
-				"externalIdOnly"
+				"externalIdOnly",
+				"liveStream"
 			]
 		},
 		"external_id_source_type": {
