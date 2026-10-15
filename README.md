@@ -1,3 +1,11 @@
+# search-feed-json has moved to GitLab
+
+**This project has moved.** Development now continues at **https://gitlab.com/rokudev/search-feed-json**.
+
+This GitHub repository is archived and read-only. It is kept only as a pointer to the new home. Please open new issues and merge requests on GitLab.
+
+---
+
 # Roku Search feed
 
 Channels participate in Roku Search by creating and submitting a search feed. The search feed is a single JSON file that includes the content metadata for a channel's video catalog. Content meta data includes the unique ID, title, description, duration, rating, language, artwork, and so on. Once the feed has been configured following this spec, it can be submitted to [Roku's feed validation tool](https://developer.roku.com/search/feed_validator), and the integration into Roku Search can then be completed. 
